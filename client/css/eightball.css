@@ -1,0 +1,39 @@
+ body {
+     background: url('/img/Magic-8-Ball.jpg') no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+ }
+
+ #banner {
+     text-align: center;
+ }
+
+ .query {
+     float: left;
+     margin-left: 20px;
+     padding: 5px;
+ }
+
+ .results {
+     margin-top: 5px;
+     margin-right: 50px;
+     color: white;
+     font-size: 16;
+     float: right;
+     padding: 5px;
+ }
+ 
+ #result {
+     max-width: 80px; 
+     word-wrap: break-word;
+     text-align: center;
+     font-size: larger;
+ }
+ 
+ .centered_div {
+   position: absolute;
+   top: 42%;
+   left: 46%;
+}

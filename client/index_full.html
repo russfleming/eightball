@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Magic 8 Ball</title>
+
+    <!-- load utilities packages -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+
+
+    <!-- Provides styling for HTML components in body == Comment this out and see what it looks like! -->
+    <link rel="stylesheet" type="text/css" href="/css/eightball.css">
+
+
+    <!-- Javascript logic -->
+    <script>
+        // the ready() function is called after all the elements of the page have been loaded
+        $(document).ready(function() {
+
+            // this called when the 'press me' button is clicked
+            $("#button").click(function() {
+                // var question = $("#question").val();
+
+                // send a 'getAnswer' message to the server
+                $.get("getAnswer", function(data, status) {
+                    // process the response from the server
+                    $('#result').text(data.response);
+                });
+            });
+
+        });
+    </script>
+</head>
+
+
+<!-- The body holds all the html components to be displayed (but no logic or styling) -->
+<body>
+    <h1 id="banner">Magic 8 Ball</h1>
+
+    <div class="results centered_div">
+        <label id="result"></label>
+    </div>
+
+    <div class="query">
+        <label>Ask your yes/no question:</label>
+        <input type="text" id="question" value="Ask the 8 Ball">
+        <br>
+        <button class="btn btn-primary" id="button">Ask Me!</button>
+    </div>
+</body>
+
+</html>
